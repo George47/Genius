@@ -5,7 +5,7 @@ class GenList extends StatelessWidget {
   Widget build(BuildContext context) {
     // var deviceSize = MediaQuery.of(context).size;
     return new ListView.builder(
-        itemCount: 2,
+        itemCount: 1,
         itemBuilder: (context, index) => 
           Column(
             mainAxisAlignment: MainAxisAlignment.start,
@@ -29,7 +29,6 @@ class GenList extends StatelessWidget {
               Padding(
                 padding: const EdgeInsets.all(16.0),
               ),
-
               Flexible(
                 fit: FlexFit.loose,
                 flex: 1,
