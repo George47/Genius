@@ -26,9 +26,6 @@ class GenList extends StatelessWidget {
                   ),
                 )
               ),
-              Padding(
-                padding: const EdgeInsets.all(16.0),
-              ),
               Flexible(
                 fit: FlexFit.loose,
                 flex: 1,
