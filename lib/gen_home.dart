@@ -18,7 +18,12 @@ class _GenHomeState extends State<GenHome> {
     actions: <Widget>[
       Padding(
         padding: const EdgeInsets.only(right: 15.0),
-        child: Icon(Icons.account_circle),
+        child: new IconButton(
+          icon: new Icon(Icons.account_circle),
+          onPressed: () { 
+              print("NAVIGATE");
+          },
+        ),
       )
     ]
 
