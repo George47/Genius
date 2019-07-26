@@ -1,6 +1,6 @@
 import 'package:first_app/gen_body.dart';
 import 'package:flutter/material.dart';
-import 'pages/test_page.dart';
+import 'pages/store_category_home.dart';
 
 class GenHome extends StatefulWidget {
   @override
@@ -75,12 +75,12 @@ class _GenHomeState extends State<GenHome> {
             //   ),
             // ),
             new ListTile(
-              title: new Text("Shop"),
-              trailing: new Icon(Icons.shopping_basket),
+              title: new Text("Man"),
+              trailing: new Icon(Icons.person),
               onTap: () {
                 Navigator.of(context).pop();
                 Navigator.of(context).push(
-                  new MaterialPageRoute(builder: (BuildContext context) => new TestPage("Shop"))
+                  new MaterialPageRoute(builder: (BuildContext context) => new StoreList("Man"))
                 );
               },
             ),
@@ -90,7 +90,7 @@ class _GenHomeState extends State<GenHome> {
               onTap: () {
                 Navigator.of(context).pop();
                 Navigator.of(context).push(
-                  new MaterialPageRoute(builder: (BuildContext context) => new TestPage("Settings"))
+                  new MaterialPageRoute(builder: (BuildContext context) => new StoreList("Settings"))
                 );
               },
             ),
