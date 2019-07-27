@@ -13,33 +13,24 @@ class SingleProduct extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      decoration: new BoxDecoration(boxShadow: [
-        new BoxShadow(
-          color: Colors.grey,
-          blurRadius: 3.0,
-          offset: Offset(3, 3)
-        ),
-      ]),
+    return ListView(
+      children: <Widget>[
+        Container(
+          // decoration: new BoxDecoration(boxShadow: [
+      //   new BoxShadow(
+      //     color: Colors.grey,
+      //     blurRadius: 3.0,
+      //     offset: Offset(3, 3)
+      //   ),
+      // ]),
       child: Card(
         child: Hero(
           tag: productName,
+
           child: Material(
             child: InkWell(
-              onTap: (){print("Clicked " + productName);},
+              onTap: (){print("Clicked " + productName + ", priced " + productPrice);},
               child: GridTile(
-                footer: Container(
-                  color: Colors.white70,
-                  child: ListTile(
-                    leading: Text(
-                      productName,
-                      style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                      ),
-                    ),
-                    title: Text("\$$productPrice"),
-                  ),
-                ),
                 child: Image.asset(
                   productImage,
                   fit: BoxFit.cover,
@@ -47,8 +38,52 @@ class SingleProduct extends StatelessWidget {
               ),
             ),
           ),
+          
         ),
       ),
+        ),
+
+        Text(
+          productName
+        )
+      ],
+
+
+      // return Card(
+      //   child: Hero(
+      //     tag: productName,
+
+      //     child: Material(
+      //       child: InkWell(
+      //         onTap: (){print("Clicked " + productName + ", priced " + productPrice);},
+      //         child: GridTile(
+      //           // footer: Container(
+      //           //   color: Colors.white70,
+      //           //   child: ListTile(
+      //           //     leading: Text(
+      //           //       productName,
+      //           //       style: TextStyle(
+      //           //         fontWeight: FontWeight.bold,
+      //           //       ),
+      //           //     ),
+      //           //     title: Text("\$$productPrice"),
+      //           //   ),
+      //           // ),
+      //           child: Image.asset(
+      //             productImage,
+      //             fit: BoxFit.cover,
+      //           ),
+      //         ),
+      //       ),
+      //     ),
+          
+      //   ),
+      // ),
+      
+
+
+
+
     );
   }
 }
