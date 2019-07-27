@@ -1,4 +1,4 @@
-import 'package:first_app/gen_list.dart';
+import 'package:Genius/gen_list.dart';
 import 'package:flutter/material.dart';
 
 class GenBody extends StatelessWidget {
