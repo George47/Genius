@@ -14,7 +14,28 @@ class ProductPage extends StatelessWidget {
       body: new Center(
         // child: new Text(pageText),
         child: ProductPageDetails(pageText),
-      )
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          showBottomSheet(
+            context: context,
+            builder: (context) => Container(
+              color: Colors.red,
+            ),
+          );
+        },
+      ),
+
+      // persistentFooterButtons: <Widget>[
+      //   new IconButton(
+      //     icon: new Icon(Icons.favorite_border),
+      //     onPressed: null,
+      //   ),
+      //   new FlatButton(
+      //     child: new Icon(Icons.add_shopping_cart),
+      //     onPressed: null,
+      //   ),
+      // ], 
     );
   }
 }
