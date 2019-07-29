@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'product_page_details.dart';
+import 'add_to_cart_bottom.dart';
 
 class ProductPage extends StatelessWidget {
 
@@ -15,16 +16,7 @@ class ProductPage extends StatelessWidget {
         // child: new Text(pageText),
         child: ProductPageDetails(pageText),
       ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {
-          showBottomSheet(
-            context: context,
-            builder: (context) => Container(
-              color: Colors.red,
-            ),
-          );
-        },
-      ),
+      floatingActionButton: FloatingButton(),
 
       // persistentFooterButtons: <Widget>[
       //   new IconButton(
@@ -37,5 +29,43 @@ class ProductPage extends StatelessWidget {
       //   ),
       // ], 
     );
+  }
+}
+
+class FloatingButton extends StatefulWidget {
+  @override
+  _FloatingButtonState createState() => _FloatingButtonState();
+}
+
+class _FloatingButtonState extends State<FloatingButton> {
+  bool _show = true;
+
+  @override
+  Widget build(BuildContext context) {
+    return _show
+    ? FloatingActionButton(
+      backgroundColor: Colors.black,
+      onPressed: () {
+        var sheetController = showBottomSheet(
+          context: context,
+          builder: (context) => Container(
+            child: AddToCartBottom(),
+          ),
+        );
+
+        _showButton(false);
+
+        sheetController.closed.then((value){
+          _showButton(true);
+        });
+      },
+    ) : Container();
+  }
+
+  void _showButton(bool value)
+  {
+    setState(() {
+      _show = value;
+    });
   }
 }
