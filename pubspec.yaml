@@ -27,6 +27,8 @@ dependencies:
 dev_dependencies:
   flutter_test:
     sdk: flutter
+  flutter_launcher_icons: "^0.7.0"
+
 
 
 # For information on the generic Dart part of this file, see the
@@ -45,6 +47,7 @@ flutter:
    - assets/images/image1.jpg
    - assets/images/image2.jpg
    - assets/images/black.jpg
+   - assets/images/tshirt1.jpg
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
@@ -71,3 +74,11 @@ flutter:
   #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages
+
+flutter_icons:
+  ios: true
+  android: true
+  image_path_ios: "assets/images/logo2.png"
+  image_path_android: "assets/images/logo2.png"
+  adaptive_icon_background: "assets/images/logo2.png"
+  adaptive_icon_foreground: "assets/images/logo2.png"

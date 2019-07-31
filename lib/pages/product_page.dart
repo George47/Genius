@@ -12,10 +12,14 @@ class ProductPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return new Scaffold(
       appBar: new AppBar(title: new Text(pageText), backgroundColor: Colors.black,),
-      body: new Center(
+      body: SingleChildScrollView(
+        child: new Center(
         // child: new Text(pageText),
         child: ProductPageDetails(pageText),
       ),
+      ),
+
+      
       floatingActionButton: FloatingButton(),
 
       // persistentFooterButtons: <Widget>[
@@ -53,7 +57,6 @@ class _FloatingButtonState extends State<FloatingButton> {
             child: AddToCartBottom(),
           ),
         );
-
         _showButton(false);
 
         sheetController.closed.then((value){
