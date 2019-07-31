@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:Genius/models/product_size.dart';
 
 class AddToCartBottom extends StatefulWidget {
   // @override
@@ -36,11 +37,11 @@ class _AddToCartBottomState extends State<AddToCartBottom> {
                   children: <Widget>[
                     Container(
                       padding: const EdgeInsets.only(left: 20, top: 20, bottom: 5,),
-                      child: Text("item1", style: TextStyle(fontSize: 20,),),
+                      child: Text("item1", style: TextStyle(fontSize: 18,),),
                     ),
                     Container(
                       padding: const EdgeInsets.only(right: 20, top: 20, bottom: 5,),
-                      child: Text("\$12.99", style: TextStyle(fontSize: 20,),),
+                      child: Text("\$12.99", style: TextStyle(fontSize: 18,),),
                     ),
                   ],
                 ),
@@ -94,23 +95,56 @@ class DecoratedTextField extends StatelessWidget {
   }
 }
 
-class SizeSelectBox extends StatelessWidget {
+class SizeSelectBox extends StatefulWidget {
+  @override
+  _SizeSelectBoxState createState() => _SizeSelectBoxState();
+}
+
+class _SizeSelectBoxState extends State<SizeSelectBox> {
+  Size selectedSize;
+  List<Size> sizes = <Size>[const Size('S'), const Size('M'), const Size('L'), const Size('XL')];
+
   @override
   Widget build(BuildContext context) {
-    return new DropdownButton<String>(
+    return new DropdownButton<Size>(
       hint: Text("Select Size"),
-      items: <String>['S', 'M', 'L'].map((String value) {
-        return new DropdownMenuItem<String>(
-          value: value,
-          child: new Text(value),
+      value: selectedSize,
+      items: sizes.map((Size size) {
+        return new DropdownMenuItem<Size>(
+          value: size,
+          child: new Text(
+            size.size,
+            style: new TextStyle(color: Colors.black),
+          ),
         );
       }).toList(),
-      onChanged: (size) {
-        print("selected " + size);
+      onChanged: (Size newValue) {
+        setState(() {
+          selectedSize = newValue;
+        });
       },
     );
   }
 }
+
+// class SizeSelectBox extends StatelessWidget {
+//   @override
+//   Widget build(BuildContext context) {
+//     return new DropdownButton<String>(
+//       hint: Text("Select Size"),
+//       items: <String>['S', 'M', 'L'].map((String value) {
+//         return new DropdownMenuItem<String>(
+//           value: value,
+//           child: new Text(value),
+//         );
+//       }).toList(),
+//       onChanged: (size) {
+//         print("selected " + size);
+//       },
+//     );
+//   }
+// }
+
 
 class SheetButton extends StatefulWidget {
   @override
