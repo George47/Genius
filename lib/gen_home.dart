@@ -1,7 +1,7 @@
 import 'package:Genius/gen_body.dart';
 import 'package:flutter/material.dart';
-import 'pages/store_category_home.dart';
-import 'gen_drawer.dart';
+import 'package:Genius/pages/store_category_home.dart';
+import 'package:Genius/gen_drawer.dart';
 
 class GenHome extends StatefulWidget {
   @override

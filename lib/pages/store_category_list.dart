@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'store_single_product_card.dart';
+import 'package:Genius/pages/store_single_product_card.dart';
 
 class StoreCategoryList extends StatefulWidget {
   @override

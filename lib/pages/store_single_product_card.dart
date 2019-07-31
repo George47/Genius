@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'product_page.dart';
+import 'package:Genius/pages/product_page.dart';
 
 class SingleProduct extends StatelessWidget {
   final productName;

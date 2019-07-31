@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'product_page_details.dart';
-import 'add_to_cart_bottom.dart';
+import 'package:Genius/pages/product_page_details.dart';
+import 'package:Genius/pages/add_to_cart_bottom.dart';
 
 class ProductPage extends StatelessWidget {
 

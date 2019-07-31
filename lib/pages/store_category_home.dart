@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import './store_category_list.dart';
+import 'package:Genius/pages/store_category_list.dart';
 
 class StoreList extends StatelessWidget {
 

@@ -95,6 +95,11 @@ class DecoratedTextField extends StatelessWidget {
   }
 }
 
+// class Size {
+//   const Size(this.size);
+//   final String size;
+// }
+
 class SizeSelectBox extends StatefulWidget {
   @override
   _SizeSelectBoxState createState() => _SizeSelectBoxState();

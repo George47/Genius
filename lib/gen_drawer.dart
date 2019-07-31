@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'pages/store_category_home.dart';
+import 'package:Genius/pages/store_category_home.dart';
 
 class GenDrawer extends StatefulWidget {
   @override
