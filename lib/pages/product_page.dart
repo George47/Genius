@@ -19,7 +19,6 @@ class ProductPage extends StatelessWidget {
       ),
       ),
 
-      
       floatingActionButton: FloatingButton(),
 
       // persistentFooterButtons: <Widget>[
@@ -49,6 +48,7 @@ class _FloatingButtonState extends State<FloatingButton> {
     return _show
     ? FloatingActionButton(
       backgroundColor: Colors.black,
+      child: Icon(Icons.shopping_basket),
       
       onPressed: () {
         var sheetController = showBottomSheet(

@@ -138,6 +138,9 @@ class BottomSheetBottomRow extends StatefulWidget {
 }
 
 class _BottomSheetBottomRowState extends State<BottomSheetBottomRow> {
+  Icon fav = Icon(Icons.favorite_border);
+  bool ifFav = false;
+
   @override
   Widget build(BuildContext context) {
     return Row(
@@ -149,12 +152,27 @@ class _BottomSheetBottomRowState extends State<BottomSheetBottomRow> {
         ),
         Container(
           padding: const EdgeInsets.only(right: 20),
-          // child: SheetButton(),
           child: Row(
             children: <Widget>[
-              Icon(Icons.favorite_border),
-              Padding(padding: const EdgeInsets.only(right: 15,),),
-              Icon(Icons.add_shopping_cart),
+              IconButton(
+                icon: fav,
+                onPressed: (){
+                  setState(() {
+                    if (ifFav) {
+                      fav = Icon(Icons.favorite);
+                    } else {
+                      fav = Icon(Icons.favorite_border);
+                    }
+                    ifFav = !ifFav;
+                  });
+                },
+              ),
+              IconButton(
+                icon: Icon(Icons.add_shopping_cart),
+                onPressed: (){
+                  Navigator.of(context).pop();
+                },
+              ),
             ],
           ),
         ),
