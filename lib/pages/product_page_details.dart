@@ -14,8 +14,7 @@ class ProductPageDetails extends StatelessWidget {
         ),
         Text(
           "This is a description for product",
-        ),
-        
+        )
       ],
     );
   }

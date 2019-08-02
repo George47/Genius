@@ -2,14 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:Genius/models/product_size.dart';
 
 class AddToCartBottom extends StatefulWidget {
-  // @override
+  @override
   _AddToCartBottomState createState() => _AddToCartBottomState();
   
 }
 
 class _AddToCartBottomState extends State<AddToCartBottom> {
-
-
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -30,66 +28,12 @@ class _AddToCartBottomState extends State<AddToCartBottom> {
             ),
             child: Column(
               children: <Widget>[
-                // DecoratedTextField(),
-                // BottomSheetText(),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: <Widget>[
-                    Container(
-                      padding: const EdgeInsets.only(left: 20, top: 20, bottom: 5,),
-                      child: Text("item1", style: TextStyle(fontSize: 18,),),
-                    ),
-                    Container(
-                      padding: const EdgeInsets.only(right: 20, top: 20, bottom: 5,),
-                      child: Text("\$12.99", style: TextStyle(fontSize: 18,),),
-                    ),
-                  ],
-                ),
-
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: <Widget>[
-                    Container(
-                      padding: const EdgeInsets.only(left: 20),
-                      child: SizeSelectBox(),
-                    ),
-                    Container(
-                      padding: const EdgeInsets.only(right: 20),
-                      // child: SheetButton(),
-                      child: Row(
-                        children: <Widget>[
-                          Icon(Icons.favorite_border),
-                          Padding(padding: const EdgeInsets.only(right: 15,),),
-                          Icon(Icons.add_shopping_cart),
-                        ],
-                      ),
-                    ),
-                  ],
-                ),
-                
+                BottomSheetUpperRow(),
+                BottomSheetBottomRow(),
               ],
             ),
           )
         ],
-      ),
-    );
-  }
-}
-
-class DecoratedTextField extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      height: 50,
-      alignment: Alignment.center,
-      padding: const EdgeInsets.all(10),
-      margin: const EdgeInsets.all(10),
-      decoration: BoxDecoration(
-        color: Colors.grey[300],
-        borderRadius: BorderRadius.circular(10),
-      ),
-      child: TextField(
-        decoration: InputDecoration.collapsed(hintText: "Test"),
       ),
     );
   }
@@ -126,25 +70,6 @@ class _SizeSelectBoxState extends State<SizeSelectBox> {
     );
   }
 }
-
-// class SizeSelectBox extends StatelessWidget {
-//   @override
-//   Widget build(BuildContext context) {
-//     return new DropdownButton<String>(
-//       hint: Text("Select Size"),
-//       items: <String>['S', 'M', 'L'].map((String value) {
-//         return new DropdownMenuItem<String>(
-//           value: value,
-//           child: new Text(value),
-//         );
-//       }).toList(),
-//       onChanged: (size) {
-//         print("selected " + size);
-//       },
-//     );
-//   }
-// }
-
 
 class SheetButton extends StatefulWidget {
   @override
@@ -183,30 +108,57 @@ class _SheetButtonState extends State<SheetButton> {
   }
 }
 
-class BottomSheetText extends StatefulWidget {
+class BottomSheetUpperRow extends StatefulWidget {
   @override
-  _BottomSheetTextState createState() => _BottomSheetTextState();
+  _BottomSheetUpperRowState createState() => _BottomSheetUpperRowState();
 }
 
-class _BottomSheetTextState extends State<BottomSheetText> {
+class _BottomSheetUpperRowState extends State<BottomSheetUpperRow> {
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: Text("Item1"),
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      children: <Widget>[
+        Container(
+          padding: const EdgeInsets.only(left: 20, top: 20, bottom: 5,),
+          child: Text("item1", style: TextStyle(fontSize: 18,),),
+        ),
+        Container(
+          padding: const EdgeInsets.only(right: 20, top: 20, bottom: 5,),
+          child: Text("\$12.99", style: TextStyle(fontSize: 18,),),
+        ),
+      ],
     );
   }
 }
 
-class BottomSheetIcons extends StatefulWidget {
+class BottomSheetBottomRow extends StatefulWidget {
   @override
-  _BottomSheetIconsState createState() => _BottomSheetIconsState();
+  _BottomSheetBottomRowState createState() => _BottomSheetBottomRowState();
 }
 
-class _BottomSheetIconsState extends State<BottomSheetIcons> {
+class _BottomSheetBottomRowState extends State<BottomSheetBottomRow> {
   @override
   Widget build(BuildContext context) {
-    return Container(
-      
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      children: <Widget>[
+        Container(
+          padding: const EdgeInsets.only(left: 20),
+          child: SizeSelectBox(),
+        ),
+        Container(
+          padding: const EdgeInsets.only(right: 20),
+          // child: SheetButton(),
+          child: Row(
+            children: <Widget>[
+              Icon(Icons.favorite_border),
+              Padding(padding: const EdgeInsets.only(right: 15,),),
+              Icon(Icons.add_shopping_cart),
+            ],
+          ),
+        ),
+      ],
     );
   }
 }
