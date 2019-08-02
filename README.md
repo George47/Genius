@@ -1,6 +1,6 @@
-# first_app
+# Genius
 
-A new Flutter project.
+A mobile E-commerce App
 
 ## Getting Started
 
