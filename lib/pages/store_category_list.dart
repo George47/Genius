@@ -17,7 +17,7 @@ class _StoreCategoryListState extends State<StoreCategoryList> {
     {
       "name": "item2",
       "price": "6.99",
-      "image": "assets/images/image2.jpg"
+      "image": "assets/images/tshirt1.jpg"
     },
     {
       "name": "item3",
