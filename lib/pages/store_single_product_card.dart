@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:Genius/pages/product_page.dart';
+import 'package:Genius/models/product.dart';
 
 class SingleProduct extends StatelessWidget {
   final productName;
@@ -14,6 +15,8 @@ class SingleProduct extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+      Product product = Product(productName, productImage, productPrice);
+
       return Card(
         child: Hero(
           tag: productName,
@@ -22,7 +25,7 @@ class SingleProduct extends StatelessWidget {
               onTap: (){
                 Navigator.of(context).push(
                   new MaterialPageRoute(builder: (BuildContext context) => 
-                      new ProductPage(productName))
+                      new ProductPage(product))
                 );
               },
               child: GridTile(

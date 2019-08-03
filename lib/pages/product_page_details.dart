@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 
 class ProductPageDetails extends StatelessWidget {
-  final String productName;
+  final product;
 
-  ProductPageDetails(this.productName);
+  ProductPageDetails(this.product);
 
   @override
   Widget build(BuildContext context) {
@@ -12,9 +12,9 @@ class ProductPageDetails extends StatelessWidget {
     return Wrap(
       children: <Widget>[
         Hero(
-          tag: productName,
+          tag: product.name,
           child: Image.asset(
-                  "assets/images/tshirt1.jpg",
+                  product.image,
                   fit: BoxFit.cover,
                 ),
         ),
@@ -22,7 +22,7 @@ class ProductPageDetails extends StatelessWidget {
 
         Container(
           child: Text(
-            "This is a description for product" + productName,
+            "This is a description for product " + product.name,
           ),
         )
       ],

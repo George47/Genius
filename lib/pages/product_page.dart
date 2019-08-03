@@ -3,27 +3,31 @@ import 'package:Genius/pages/product_page_details.dart';
 import 'package:Genius/pages/add_to_cart_bottom.dart';
 
 class ProductPage extends StatelessWidget {
-  final String pageText;
+  final product;
   
-  ProductPage(this.pageText);
+  ProductPage(this.product);
 
   @override
   Widget build(BuildContext context) {
     return new Scaffold(
-      appBar: new AppBar(title: new Text(pageText), backgroundColor: Colors.black,),
+      appBar: new AppBar(title: new Text(product.name), backgroundColor: Colors.black,),
       body: SingleChildScrollView(
         child: new Center(
-          child: ProductPageDetails(pageText),
+          child: ProductPageDetails(product),
         ),
       ),
-      floatingActionButton: FloatingButton(),
+      floatingActionButton: FloatingButton(product),
     );
   }
 }
 
 class FloatingButton extends StatefulWidget {
+  final product;
+  FloatingButton(this.product);
+
   @override
   _FloatingButtonState createState() => _FloatingButtonState();
+
 }
 
 class _FloatingButtonState extends State<FloatingButton> {
@@ -40,7 +44,7 @@ class _FloatingButtonState extends State<FloatingButton> {
         var sheetController = showBottomSheet(
           context: context,
           builder: (context) => Container(
-            child: AddToCartBottom(),
+            child: AddToCartBottom(widget.product),
           ),
         );
         _showButton(false);

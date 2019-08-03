@@ -2,6 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:Genius/models/product_size.dart';
 
 class AddToCartBottom extends StatefulWidget {
+  final product;
+  AddToCartBottom(this.product);
+
   @override
   _AddToCartBottomState createState() => _AddToCartBottomState();
   
@@ -28,7 +31,7 @@ class _AddToCartBottomState extends State<AddToCartBottom> {
             ),
             child: Column(
               children: <Widget>[
-                BottomSheetUpperRow(),
+                BottomSheetUpperRow(widget.product),
                 BottomSheetBottomRow(),
               ],
             ),
@@ -109,23 +112,31 @@ class _SheetButtonState extends State<SheetButton> {
 }
 
 class BottomSheetUpperRow extends StatefulWidget {
+  final product;
+  BottomSheetUpperRow(this.product);
+
   @override
   _BottomSheetUpperRowState createState() => _BottomSheetUpperRowState();
 }
 
 class _BottomSheetUpperRowState extends State<BottomSheetUpperRow> {
+
   @override
   Widget build(BuildContext context) {
+    String name = widget.product.name;
+    String price = widget.product.price;
+
+
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: <Widget>[
         Container(
           padding: const EdgeInsets.only(left: 20, top: 20, bottom: 5,),
-          child: Text("item1", style: TextStyle(fontSize: 18,),),
+          child: Text(name, style: TextStyle(fontSize: 18,),),
         ),
         Container(
           padding: const EdgeInsets.only(right: 20, top: 20, bottom: 5,),
-          child: Text("\$12.99", style: TextStyle(fontSize: 18,),),
+          child: Text("\$$price", style: TextStyle(fontSize: 18,),),
         ),
       ],
     );
