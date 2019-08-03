@@ -158,12 +158,12 @@ class _BottomSheetBottomRowState extends State<BottomSheetBottomRow> {
                 icon: fav,
                 onPressed: (){
                   setState(() {
+                    ifFav=!ifFav;
                     if (ifFav) {
                       fav = Icon(Icons.favorite);
                     } else {
                       fav = Icon(Icons.favorite_border);
                     }
-                    ifFav = !ifFav;
                   });
                 },
               ),

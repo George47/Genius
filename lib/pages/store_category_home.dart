@@ -19,15 +19,15 @@ class StoreList extends StatelessWidget {
             height: deviceSize.height / 12,
             width: deviceSize.width,
             color: Colors.red,
-            // child: new Center(
-            //   child: new Text(
-            //     "New",
-            //     style: TextStyle(
-            //       fontSize: 20,
-            //       color: Colors.white,
-            //     ),
-            //   ),
-            // ),
+            child: new Center(
+              child: new Text(
+                "New",
+                style: TextStyle(
+                  fontSize: 20,
+                  color: Colors.white,
+                ),
+              ),
+            ),
           ),
           Padding(
             padding: const EdgeInsets.all(10.0),
@@ -39,11 +39,5 @@ class StoreList extends StatelessWidget {
         ],
       )
     );
-      
-      
-    //   new Container(
-    //     child: new StoreCategoryList(),
-    //   ),
-    // );
   }
 }

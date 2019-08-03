@@ -25,18 +25,6 @@ class SingleProduct extends StatelessWidget {
                 );
               },
               child: GridTile(
-                // footer: Container(
-                //   color: Colors.white70,
-                //   child: ListTile(
-                //     leading: Text(
-                //       productName,
-                //       style: TextStyle(
-                //         fontWeight: FontWeight.bold,
-                //       ),
-                //     ),
-                //     title: Text("\$$productPrice"),
-                //   ),
-                // ),
                 child: Image.asset(
                   productImage,
                   fit: BoxFit.cover,

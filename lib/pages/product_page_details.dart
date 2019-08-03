@@ -7,13 +7,20 @@ class ProductPageDetails extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var deviceSize = MediaQuery.of(context).size;
+
     return Wrap(
       children: <Widget>[
         Container(
+          height: deviceSize.height/1.5,
           child: Image.asset("assets/images/tshirt1.jpg"),
         ),
-        Text(
-          "This is a description for product",
+        Padding(padding: const EdgeInsets.only(bottom: 15),),
+
+        Container(
+          child: Text(
+            "This is a description for product",
+          ),
         )
       ],
     );

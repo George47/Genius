@@ -1,6 +1,5 @@
 import 'package:Genius/gen_body.dart';
 import 'package:flutter/material.dart';
-import 'package:Genius/pages/store_category_home.dart';
 import 'package:Genius/gen_drawer.dart';
 
 class GenHome extends StatefulWidget {
@@ -14,24 +13,19 @@ class _GenHomeState extends State<GenHome> {
     backgroundColor: Colors.black,
     centerTitle: true,
     elevation: 1.0,
-    // leading: new Icon(Icons.menu),
     title: Text("Genius"),
     actions: <Widget>[
       Padding(
         padding: const EdgeInsets.only(right: 15.0),
         child: new IconButton(
-          icon: new Icon(Icons.account_circle),
+          icon: new Icon(Icons.shopping_cart),
           onPressed: () { 
-              print("NAVIGATE");
+              print("CART PAGE");
           },
         ),
-      )
-    ]
-
+      ),
+    ],
   );
-
-
-
 
   @override
   Widget build(BuildContext context) {

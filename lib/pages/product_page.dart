@@ -3,9 +3,8 @@ import 'package:Genius/pages/product_page_details.dart';
 import 'package:Genius/pages/add_to_cart_bottom.dart';
 
 class ProductPage extends StatelessWidget {
-
   final String pageText;
-
+  
   ProductPage(this.pageText);
 
   @override
@@ -14,23 +13,10 @@ class ProductPage extends StatelessWidget {
       appBar: new AppBar(title: new Text(pageText), backgroundColor: Colors.black,),
       body: SingleChildScrollView(
         child: new Center(
-        // child: new Text(pageText),
-        child: ProductPageDetails(pageText),
+          child: ProductPageDetails(pageText),
+        ),
       ),
-      ),
-
       floatingActionButton: FloatingButton(),
-
-      // persistentFooterButtons: <Widget>[
-      //   new IconButton(
-      //     icon: new Icon(Icons.favorite_border),
-      //     onPressed: null,
-      //   ),
-      //   new FlatButton(
-      //     child: new Icon(Icons.add_shopping_cart),
-      //     onPressed: null,
-      //   ),
-      // ], 
     );
   }
 }
