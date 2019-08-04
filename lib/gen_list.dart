@@ -49,6 +49,15 @@ class GenList extends StatelessWidget {
                 padding: const EdgeInsets.all(16.0),
               ),
 
+              Container(
+                height: 500,
+                child: ListView.builder(
+                  itemCount: 5,
+                  itemBuilder: (BuildContext context, int e) {
+                    return new Text("text");
+                  },
+                ),
+              ),
             ],
           ),
     );

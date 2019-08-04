@@ -15,12 +15,18 @@ class _GenHomeState extends State<GenHome> {
     elevation: 1.0,
     title: Text("Genius"),
     actions: <Widget>[
+      IconButton(
+        icon: new Icon(Icons.search),
+        onPressed: () { 
+            print("SEARCH");
+        },
+      ),
       Padding(
         padding: const EdgeInsets.only(right: 15.0),
         child: new IconButton(
           icon: new Icon(Icons.shopping_cart),
           onPressed: () { 
-              print("CART PAGE");
+              print("CART PAGEs");
           },
         ),
       ),

@@ -21,8 +21,13 @@ class ProductPageDetails extends StatelessWidget {
         Padding(padding: const EdgeInsets.only(bottom: 15),),
 
         Container(
+          height: 300,
+          padding: const EdgeInsets.all(15),
           child: Text(
-            "This is a description for product " + product.name,
+            "This is a description for product " + product.name + ". The product price is \$" + product.price,
+            style: TextStyle(
+              fontSize: 16,
+            ),
           ),
         )
       ],
