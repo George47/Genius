@@ -1,4 +1,5 @@
 import 'package:Genius/gen_body.dart';
+import 'package:Genius/login/login.dart';
 import 'package:flutter/material.dart';
 import 'package:Genius/gen_drawer.dart';
 
@@ -9,7 +10,19 @@ class GenHome extends StatefulWidget {
 
 class _GenHomeState extends State<GenHome> {
 
-  final topBar = new AppBar(
+  @override
+  Widget build(BuildContext context) {
+    return new Scaffold(
+      appBar: topBar(),
+      drawer: new Drawer(
+        child: GenDrawer(),
+      ),
+      body: new GenBody(),
+    );
+  }
+
+  Widget topBar() {
+    return new AppBar(
     backgroundColor: Colors.black,
     centerTitle: true,
     elevation: 1.0,
@@ -18,7 +31,9 @@ class _GenHomeState extends State<GenHome> {
       IconButton(
         icon: new Icon(Icons.search),
         onPressed: () { 
-            print("SEARCH");
+            Navigator.of(context).push(
+              new MaterialPageRoute(builder: (BuildContext context) => new LoginPage())
+            );
         },
       ),
       Padding(
@@ -32,15 +47,5 @@ class _GenHomeState extends State<GenHome> {
       ),
     ],
   );
-
-  @override
-  Widget build(BuildContext context) {
-    return new Scaffold(
-      appBar: topBar,
-      drawer: new Drawer(
-        child: GenDrawer(),
-      ),
-      body: new GenBody(),
-    );
   }
 }
