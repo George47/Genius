@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:Genius/pages/store_category_home.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 
 class GenDrawer extends StatefulWidget {
   @override
@@ -71,7 +72,48 @@ class _GenDrawerState extends State<GenDrawer> {
 
           new ListTile(
             title: new Text("Genius"),
-            trailing: new Icon(Icons.thumb_up),
+            trailing: new Padding(
+              padding: const EdgeInsets.only(right: 11),
+              child: Icon(
+                Icons.thumb_up
+              ),
+            ),
+          ),
+          new ListTile(
+            title: new Text("Sign In"),
+            trailing: new Padding(
+              padding: const EdgeInsets.only(right: 11),
+              child: Icon(
+                Icons.account_circle
+              ),
+            ),
+            onTap: () {
+              checkUser();
+            },
+          ),
+          new ListTile(
+            title: new Text("Sign Out"),
+            trailing: new Padding(
+              padding: const EdgeInsets.only(right: 11),
+              child: Icon(
+                Icons.question_answer
+              ),
+            ),
+            onTap: () {
+              signOut();
+            },
+          ),
+
+          new ListTile(
+            title: new Text("Save this store"),
+            trailing: new Padding(
+              padding: const EdgeInsets.only(left: 10),
+              child: Checkbox(
+              checkColor: Colors.black,
+              value: false, 
+              onChanged: null,
+            ),
+            ),
           ),
 
           new Divider(),
@@ -82,5 +124,18 @@ class _GenDrawerState extends State<GenDrawer> {
           ),
         ],
     );
+  }
+
+  void signOut() async {
+    final FirebaseAuth _auth = FirebaseAuth.instance;
+    _auth.signOut();
+    print("signed out");
+  }
+
+  void checkUser() async {
+    final FirebaseAuth _auth = FirebaseAuth.instance;
+    final FirebaseUser user = await _auth.currentUser();
+    final uid = user.uid;
+    print(uid);
   }
 }
