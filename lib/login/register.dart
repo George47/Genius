@@ -1,21 +1,20 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:Genius/gen_home.dart';
-import 'package:Genius/login/register.dart';
 
-class LoginPage extends StatefulWidget {
+class RegisterPage extends StatefulWidget {
   @override
-  _LoginPageState createState() => _LoginPageState();
+  _RegisterPageState createState() => _RegisterPageState();
 }
 
-class _LoginPageState extends State<LoginPage> {
+class _RegisterPageState extends State<RegisterPage> {
   String _email, _password;
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
 
   @override
   Widget build(BuildContext context) {
     return new Scaffold(
-      appBar: new AppBar(title: new Text("login"), backgroundColor: Colors.black,),
+      appBar: new AppBar(title: new Text("Register"), backgroundColor: Colors.black,),
       body: Form(
         key: _formKey,
         child: new Center(
@@ -47,18 +46,9 @@ class _LoginPageState extends State<LoginPage> {
                 obscureText: true,
               ),
               RaisedButton(
-                child: Text("Sign in"),
-                onPressed: () {
-                  signIn();
-                  
-                },
-              ),
-              RaisedButton(
                 child: Text("Register"),
                 onPressed: () {
-                  Navigator.of(context).push(
-                    new MaterialPageRoute(builder: (BuildContext context) => new RegisterPage())
-                  );
+                  register();
                   
                 },
               )
@@ -69,13 +59,14 @@ class _LoginPageState extends State<LoginPage> {
     );
   }
 
-  Future<void> signIn() async {
+  Future<void> register() async {
     final FirebaseAuth _auth = FirebaseAuth.instance;
     final formState = _formKey.currentState;
     if (formState.validate()){
       formState.save();
       try {
-        AuthResult result = await _auth.signInWithEmailAndPassword(email: _email, password: _password);
+        // AuthResult result = await _auth.signInWithEmailAndPassword(email: _email, password: _password);
+        AuthResult result = await _auth.createUserWithEmailAndPassword(email: _email, password: _password);
         FirebaseUser user = result.user;
         Navigator.push(context, MaterialPageRoute(builder: (context) => GenHome()));
       } catch (e) {
