@@ -1,6 +1,6 @@
 # Genius
 
-A modern solution to mobile e-commerce. Serves as a directory App for various merchants to and creates an express checkout experience for customers.
+A modern solution to mobile e-commerce. Serves as a directory App for various merchants and creates an express checkout experience for customers.
 
 ## Getting Started
 
@@ -17,17 +17,18 @@ Connect to your Firebase account:
 
 ### In-process
 
-- Sign in / Register (50%)
 - Product Detail Page (30%)
 - Re-model obejcts (20%)
+- Database connection (10%)
 
 ### To-dos
 
-- Database connection
+- Store loading page
 - Cart Page
 - Checkout
 - Payment connection
 - Orders
+- Customization
 
 ------------
 
