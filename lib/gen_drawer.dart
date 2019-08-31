@@ -1,3 +1,4 @@
+import 'package:Genius/gen_home2.dart';
 import 'package:flutter/material.dart';
 import 'package:Genius/pages/store_category_home.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -78,6 +79,12 @@ class _GenDrawerState extends State<GenDrawer> {
                 Icons.thumb_up
               ),
             ),
+            onTap: () {
+              Navigator.of(context).pop();
+              Navigator.of(context).push(
+                new MaterialPageRoute(builder: (BuildContext context) => new GenHome2()),
+              );
+            },
           ),
           new ListTile(
             title: new Text("Sign In"),

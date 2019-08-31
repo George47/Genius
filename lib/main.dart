@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:Genius/gen_home.dart';
+import 'package:Genius/gen_home2.dart';
 
 void main() => runApp(MyApp());
 
@@ -15,7 +16,7 @@ class MyApp extends StatelessWidget {
         primaryTextTheme: TextTheme(title: TextStyle(color: Colors.white)),
         textTheme: TextTheme(title: TextStyle(color: Colors.white)),
       ),
-      home: new GenHome(),
+      home: new GenHome2(),
     );
   }
 }

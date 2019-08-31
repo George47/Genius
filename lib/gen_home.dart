@@ -2,6 +2,7 @@ import 'package:Genius/gen_body.dart';
 import 'package:Genius/login/login.dart';
 import 'package:flutter/material.dart';
 import 'package:Genius/gen_drawer.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 
 class GenHome extends StatefulWidget {
   @override
@@ -31,9 +32,17 @@ class _GenHomeState extends State<GenHome> {
       IconButton(
         icon: new Icon(Icons.search),
         onPressed: () { 
-            Navigator.of(context).push(
-              new MaterialPageRoute(builder: (BuildContext context) => new LoginPage())
-            );
+            redirectLogin(context);
+            // var loggedIn = checkLogin();
+            // print(loggedIn);
+            // if (loggedIn != null) {
+            //   print('logged in');
+            // } else {
+            //   print('not logged in');
+            // }
+            // Navigator.of(context).push(
+            //   new MaterialPageRoute(builder: (BuildContext context) => new LoginPage())
+            // );
         },
       ),
       Padding(
@@ -47,5 +56,16 @@ class _GenHomeState extends State<GenHome> {
       ),
     ],
   );
+  }
+
+  checkLogin() async {
+    final FirebaseAuth _auth = FirebaseAuth.instance;
+    final FirebaseUser user = await _auth.currentUser();
+    // print(user ?? false);
+    return user ?? false;
+  }
+
+  redirectLogin(context) {
+    print(context);
   }
 }
