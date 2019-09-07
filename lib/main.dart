@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:Genius/gen_home.dart';
+import 'package:Genius/gen_store.dart';
 import 'package:Genius/gen_home2.dart';
 
 void main() => runApp(MyApp());

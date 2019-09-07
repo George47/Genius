@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:Genius/gen_home.dart';
+import 'package:Genius/gen_store.dart';
 
 class RegisterPage extends StatefulWidget {
   @override
@@ -68,7 +68,7 @@ class _RegisterPageState extends State<RegisterPage> {
         // AuthResult result = await _auth.signInWithEmailAndPassword(email: _email, password: _password);
         AuthResult result = await _auth.createUserWithEmailAndPassword(email: _email, password: _password);
         FirebaseUser user = result.user;
-        Navigator.push(context, MaterialPageRoute(builder: (context) => GenHome()));
+        Navigator.push(context, MaterialPageRoute(builder: (context) => GenStore()));
       } catch (e) {
         print(e);
       }

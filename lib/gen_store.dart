@@ -4,12 +4,12 @@ import 'package:flutter/material.dart';
 import 'package:Genius/gen_drawer.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
-class GenHome extends StatefulWidget {
+class GenStore extends StatefulWidget {
   @override
   _GenHomeState createState() => _GenHomeState();
 }
 
-class _GenHomeState extends State<GenHome> {
+class _GenHomeState extends State<GenStore> {
 
   @override
   Widget build(BuildContext context) {

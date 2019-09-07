@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:Genius/gen_home.dart';
+import 'package:Genius/gen_store.dart';
 
 class GenHome2 extends StatefulWidget {
   @override
@@ -18,7 +18,7 @@ class _GenHome2State extends State<GenHome2> {
             IconButton(icon: new Icon(Icons.pages),
               onPressed: () { 
                   Navigator.of(context).push(
-                    new MaterialPageRoute(builder: (BuildContext context) => new GenHome())
+                    new MaterialPageRoute(builder: (BuildContext context) => new GenStore())
                   );
               },
             )
