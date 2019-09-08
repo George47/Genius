@@ -14,6 +14,7 @@ class _GenHomeState extends State<GenHome> {
     return new Scaffold(
       appBar: new AppBar(title: new Text('Genius'), backgroundColor: Colors.black,),
       body: new Center(
+        child: new Column(
           children: <Widget>[
             Padding(
               padding: EdgeInsets.all(12),
