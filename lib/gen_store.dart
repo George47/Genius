@@ -3,6 +3,8 @@ import 'package:Genius/login/login.dart';
 import 'package:flutter/material.dart';
 import 'package:Genius/gen_drawer.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:Genius/pages/cart_page.dart';
+import 'package:Genius/pages/test_page.dart';
 
 class GenStore extends StatefulWidget {
   @override
@@ -50,7 +52,9 @@ class _GenHomeState extends State<GenStore> {
         child: new IconButton(
           icon: new Icon(Icons.shopping_cart),
           onPressed: () { 
-              print("CART PAGEs");
+            Navigator.of(context).push(
+              new MaterialPageRoute(builder: (BuildContext context) => new CartPage('Cart Page'))
+            );
           },
         ),
       ),
@@ -61,7 +65,7 @@ class _GenHomeState extends State<GenStore> {
   checkLogin() async {
     final FirebaseAuth _auth = FirebaseAuth.instance;
     final FirebaseUser user = await _auth.currentUser();
-    // print(user ?? false);
+    print(user ?? false);
     return user ?? false;
   }
 
